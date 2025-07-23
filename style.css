@@ -1,0 +1,102 @@
+/* Reset và thân thiện với mobile */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 16px;
+  margin: 0;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.tabs button {
+  padding: 10px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.tabs button:hover {
+  background-color: #0056b3;
+}
+
+.main {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 12px;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  white-space: pre-wrap;
+}
+
+footer {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
+
+  .tabs button {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+
+  button, input {
+    font-size: 16px;
+  }
+
+  #result {
+    font-size: 16px;
+  }
+}

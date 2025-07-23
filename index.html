@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiểm tra Vietlott</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🔍 Kiểm tra kết quả Vietlott</h1>
+
+  <div class="tabs">
+    <button onclick="switchGame('645')">6/45</button>
+    <button onclick="switchGame('655')">6/55</button>
+  </div>
+
+  <div class="main">
+    <input id="numberInput" type="text" placeholder="Nhập 6 số, cách nhau bằng dấu phẩy" />
+    <button onclick="checkNumbers()">Kiểm tra</button>
+    <div id="result"></div>
+  </div>
+
+  <footer>
+    © 2025 | Kiểm tra Vietlott 6/45 & 6/55 đơn giản
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
