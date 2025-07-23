@@ -40,7 +40,7 @@ function checkNumbers() {
     if (currentGame === '645') {
       const matched = numbers.filter(n => winning.includes(n));
       if (matched.length === 6) {
-        jackpots.push(`🎯 Trúng Jackpot Mega kỳ #${draw.id} (${draw.date})`);
+        jackpots.push(`🎯 Trúng Jeackpot Mega kỳ #${draw.id} (${draw.date})`);
       }
     } else if (currentGame === '655') {
       const first6 = winning.slice(0, 6);
@@ -60,5 +60,12 @@ function checkNumbers() {
     ? jackpots.join('<br>')
     : '🙁 Không trúng Jackpot nào.';
 }
+
+// Đếm lượt truy cập bằng countapi.xyz
+fetch('https://api.countapi.xyz/update/vietlott-checker/visits/?amount=1')
+  .then(res => res.json())
+  .then(res => {
+    document.getElementById('counter').innerText = res.value.toLocaleString();
+  });
 
 loadData();
