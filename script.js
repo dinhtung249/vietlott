@@ -1,10 +1,16 @@
+
 let currentGame = '645';
 let results = [];
 
 function switchGame(gameType) {
   currentGame = gameType;
   document.getElementById('result').innerText = '';
+  document.getElementById('title').innerText = `🔍 Kiểm tra kết quả ${gameType}`;
   loadData();
+
+  document.getElementById('btn645').classList.remove('active');
+  document.getElementById('btn655').classList.remove('active');
+  document.getElementById('btn' + gameType).classList.add('active');
 }
 
 async function loadData() {
@@ -31,13 +37,11 @@ function checkNumbers() {
   for (const draw of results) {
     const winning = draw.result;
 
-    // 6/45: đơn giản
     if (currentGame === '645') {
       const matched = numbers.filter(n => winning.includes(n));
       if (matched.length === 6) {
-        jackpots.push(`🎯 Trúng 6/6 kỳ #${draw.id} (${draw.date})`);
+        jackpots.push(`🎯 Trúng Jackpot Mega kỳ #${draw.id} (${draw.date})`);
       }
-
     } else if (currentGame === '655') {
       const first6 = winning.slice(0, 6);
       const bonus = winning[6];
@@ -45,19 +49,16 @@ function checkNumbers() {
       const matchedBonus = numbers.includes(bonus);
 
       if (matchedMain.length === 6) {
-        jackpots.push(`🎯 Jackpot 1 tại kỳ #${draw.id} (${draw.date})`);
+        jackpots.push(`🎯 Jackpot 1 Power tại kỳ #${draw.id} (${draw.date})`);
       } else if (matchedMain.length === 5 && matchedBonus) {
-        jackpots.push(`🥈 Jackpot 2 tại kỳ #${draw.id} (${draw.date})`);
+        jackpots.push(`🥈 Jackpot 2 Power tại kỳ #${draw.id} (${draw.date})`);
       }
     }
   }
 
-  if (jackpots.length > 0) {
-    document.getElementById('result').innerHTML = jackpots.join('<br>');
-  } else {
-    document.getElementById('result').innerText = '🙁 Không trúng Jackpot nào.';
-  }
+  document.getElementById('result').innerHTML = jackpots.length > 0
+    ? jackpots.join('<br>')
+    : '🙁 Không trúng Jackpot nào.';
 }
 
-// Load mặc định
 loadData();
