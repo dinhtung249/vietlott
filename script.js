@@ -86,6 +86,7 @@ async function runStatistics() {
       const gap = i > 0 ? ` (cách ${d.id - prev.id} kỳ)` : '';
       return `#${d.id} (${d.date}): ${d.result.join(', ')}${gap}`;
     });
+      document.getElementById('statResult').innerText = lines.join('\n');
     }
   } catch {
     document.getElementById('statResult').innerText = 'Không thể tải dữ liệu.';
