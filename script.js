@@ -81,8 +81,11 @@ async function runStatistics() {
     if (matches.length === 0) {
       document.getElementById('statResult').innerText = 'Không tìm thấy kỳ nào có số này ở đầu.';
     } else {
-      const lines = matches.map(d => `#${d.id} (${d.date}): ${d.result.join(', ')}`);
-      document.getElementById('statResult').innerText = lines.join('\n');
+      const lines = matches.map((d, i) => {
+      const prev = matches[i - 1];
+      const gap = i > 0 ? ` (cách ${d.id - prev.id} kỳ)` : '';
+      return `#${d.id} (${d.date}): ${d.result.join(', ')}${gap}`;
+    });
     }
   } catch {
     document.getElementById('statResult').innerText = 'Không thể tải dữ liệu.';
