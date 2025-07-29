@@ -8,7 +8,7 @@ function switchGame(gameType) {
   if (gameType === 'stat') {
     document.getElementById('checkSection').style.display = 'none';
     document.getElementById('statSection').style.display = 'block';
-    document.getElementById('title').innerText = "📊 Thống kê theo số đầu tiên";
+    document.getElementById('title').innerText = `📊 Thống kê theo số đầu tiên`;
   } else {
     document.getElementById('checkSection').style.display = 'block';
     document.getElementById('statSection').style.display = 'none';
