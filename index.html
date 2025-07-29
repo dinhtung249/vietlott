@@ -7,28 +7,33 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1 id="title">🔍 Kiểm tra kết quả 6/45</h1>
+  <h1>🔍 Kiểm tra kết quả Vietlott</h1>
 
   <div class="tabs">
-    <button id="btn645" onclick="switchGame('645')">6/45</button>
-    <button id="btn655" onclick="switchGame('655')">6/55</button>
+    <button onclick="switchGame('645')">6/45</button>
+    <button onclick="switchGame('655')">6/55</button>
+	<button id="btnStat" onclick="switchGame('stat')">📊 Thống kê</button>																		   
   </div>
 
-  <div class="main">
+  <div class="main" id="checkSection">
     <input id="numberInput" type="text" placeholder="Nhập 6 số, cách nhau bằng dấu phẩy" />
     <button onclick="checkNumbers()">Kiểm tra</button>
     <div id="result"></div>
   </div>
 
+	  <div class="main" id="statSection" style="display:none;">
+    <select id="statGame">
+      <option value="645">6/45</option>
+      <option value="655">6/55</option>
+    </select>
+    <input id="statNumber" type="number" min="1" max="45" placeholder="Nhập 1 số (1-45)" />
+    <button onclick="runStatistics()">Thống kê</button>
+    <div id="statResult"></div>
+  </div>													   
   <footer>
-    © 2025 | Kiểm tra kết quả Vietlott 6/45 & 6/55 bản quyền Đinh Tiên Sinh
-    <div style="margin-top: 8px; font-size: 14px; color: #666;">
-      👁️ Lượt truy cập: <span id="counter">...</span>
-    </div>
+    © 2025 | Kiểm tra Vietlott 6/45 & 6/55 đơn giản
   </footer>
 
   <script src="script.js"></script>
-  <script data-goatcounter="https://vietlott.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
